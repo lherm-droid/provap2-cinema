@@ -1,4 +1,4 @@
-package br.edu.fiec.provap2_cinema.model;
+package br.edu.fiec.provap2_cinema.model.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,19 +7,21 @@ import lombok.AllArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Sessao {
+public class FilmeEntity {
 
     private Long id;
 
-    private Filme filme;
+    private String titulo;
 
-    private Sala sala;
+    private String sinopse;
 
-    private String dataHora;
+    private String genero;
 
-    private Double preco;
+    private Integer duracaoMinutos;
 
-    private Enum status;
+    private String classificacaoIndicativa;
+
+    private Boolean ativo;
 
     // <>-------<< ENTRADA DE DADOS ESPERADA (-Exemplo-) >>-------<>
 

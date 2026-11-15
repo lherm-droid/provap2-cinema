@@ -1,4 +1,4 @@
-package br.edu.fiec.provap2_cinema.model;
+package br.edu.fiec.provap2_cinema.model.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Sala {
+public class SalaEntity {
 
     private Long id;
 

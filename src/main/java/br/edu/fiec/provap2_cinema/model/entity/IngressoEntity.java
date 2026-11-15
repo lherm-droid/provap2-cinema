@@ -1,4 +1,4 @@
-package br.edu.fiec.provap2_cinema.model;
+package br.edu.fiec.provap2_cinema.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Ingresso {
+public class IngressoEntity {
 
     private Integer id;
 
