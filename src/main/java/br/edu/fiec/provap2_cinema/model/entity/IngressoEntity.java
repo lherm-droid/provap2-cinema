@@ -1,19 +1,16 @@
 package br.edu.fiec.provap2_cinema.model.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import jakarta.persistence.Entity;
 
 @Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "ingresso")
 public class IngressoEntity {
 
-    private Integer id;
-
-    private String nome;
-
-    private String filme;
-
-    private Double preco;
 }
