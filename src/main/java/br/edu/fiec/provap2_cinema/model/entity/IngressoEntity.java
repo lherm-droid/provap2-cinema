@@ -1,16 +1,38 @@
 package br.edu.fiec.provap2_cinema.model.entity;
 
-import lombok.Data;
+import br.edu.fiec.provap2_cinema.model.dto.IngressoDTO;
 import jakarta.persistence.*;
-import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
-import jakarta.persistence.Entity;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "ingresso")
+@Table(name = "Ingresso")
 public class IngressoEntity {
 
+    @Id
+    @GeneratedValue
+    private Integer id;
+
+    @Column(nullable = false)
+    private String nome;
+
+    @Column(nullable = false)
+    private String filme;
+
+    @Column(nullable = false)
+    private Double preco;
+
+    @Column(nullable = false)
+    private String hora;
+
+    public IngressoEntity(IngressoDTO ingressoDTO) {
+        setNome(ingressoDTO.getNome());
+        setFilme(ingressoDTO.getFilme());
+        setPreco(ingressoDTO.getPreco());
+        setHora(ingressoDTO.getHora());
+    }
 }

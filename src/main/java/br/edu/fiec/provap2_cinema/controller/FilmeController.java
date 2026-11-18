@@ -1,7 +1,7 @@
 package br.edu.fiec.provap2_cinema.controller;
 
-import br.edu.fiec.provap2_cinema.FilmeEntity;
-import br.edu.fiec.provap2_cinema.FilmeService;
+import br.edu.fiec.provap2_cinema.model.entity.FilmeEntity;
+import br.edu.fiec.provap2_cinema.service.FilmeService;
 import br.edu.fiec.provap2_cinema.model.dto.FilmeDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -11,11 +11,10 @@ import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
+@RestController
+@AllArgsConstructor
+@RequestMapping(value = "filme")
 public class FilmeController {
-    @RestController
-    @AllArgsConstructor
-    @RequestMapping(value = "filme")
-    public static class FilmeController {
 
         private final FilmeService filmeService;
 
@@ -62,5 +61,5 @@ public class FilmeController {
         }
 
 
-    }
+
 }
