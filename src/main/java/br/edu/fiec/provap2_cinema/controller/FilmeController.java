@@ -35,19 +35,19 @@ public class FilmeController {
         }
 
         @ResponseStatus(HttpStatus.OK)
-        @GetMapping(value = "/{titulo}", consumes = APPLICATION_JSON_VALUE)
+        @GetMapping(value = "/titulo", consumes = APPLICATION_JSON_VALUE)
         public List<FilmeEntity> findAllFilmeByTitulo(@RequestParam String titulo) {
             return filmeService.findAllByTitulo(titulo);
         }
 
         @ResponseStatus(HttpStatus.OK)
-        @GetMapping(value = "/{genero}", consumes = APPLICATION_JSON_VALUE)
+        @GetMapping(value = "/genero", consumes = APPLICATION_JSON_VALUE)
         public List<FilmeEntity> findAllFilmeByGenero(@RequestParam String genero) {
             return filmeService.findAllByGenero(genero);
         }
 
         @ResponseStatus(HttpStatus.OK)
-        @PutMapping(value = "/{id}", consumes = APPLICATION_JSON_VALUE)
+        @PutMapping(value = "/id", consumes = APPLICATION_JSON_VALUE)
         public void uptadeFilmeById(
                 @RequestParam Integer id,
                 @RequestBody FilmeDTO filmeDTO
