@@ -8,4 +8,7 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SalaDTO {
+
+
+
 }
