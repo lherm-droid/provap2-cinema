@@ -2,6 +2,7 @@ package br.edu.fiec.provap2_cinema.service;
 
 import br.edu.fiec.provap2_cinema.model.dto.IngressoDTO;
 import br.edu.fiec.provap2_cinema.model.entity.IngressoEntity;
+import br.edu.fiec.provap2_cinema.model.entity.SessaoEntity;
 import br.edu.fiec.provap2_cinema.repository.IngressoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ public class IngressoService {
 
     private final IngressoRepository ingressoRepository;
 
+
     public void createIngresso(IngressoDTO ingressoDTO){ingressoRepository.save(new IngressoEntity(ingressoDTO));}
 
     public List<IngressoEntity> getAllIngressos(){return ingressoRepository.findAll();}
@@ -22,15 +24,14 @@ public class IngressoService {
 
     public List<IngressoEntity> getAllByNome(String nome) {return ingressoRepository.findAllByNome(nome);}
 
-    public List<IngressoEntity> getAllByFilme(String filme) {return ingressoRepository.findAllByFilmeContains(filme);}
+    public List<IngressoEntity> getAllBySessao(SessaoEntity sessao) {return ingressoRepository.findAllBySessaoContains(sessao);}
 
     public void updateIngressoById(Integer id, IngressoDTO ingressoDTO) {
         IngressoEntity ingressoEntity = ingressoRepository.findById(id).orElse(null);
 
         if (ingressoEntity != null) {
             ingressoEntity.setNome(ingressoDTO.getNome());
-            ingressoEntity.setFilme(ingressoDTO.getFilme());
-            ingressoEntity.setHora(ingressoDTO.getHora());
+            ingressoEntity.setSessaoId(ingressoDTO.getSessaoId());
             ingressoEntity.setPreco(ingressoDTO.getPreco());
 
             ingressoRepository.save(ingressoEntity);

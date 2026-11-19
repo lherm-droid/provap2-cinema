@@ -1,6 +1,7 @@
 package br.edu.fiec.provap2_cinema.repository;
 
 import br.edu.fiec.provap2_cinema.model.entity.IngressoEntity;
+import br.edu.fiec.provap2_cinema.model.entity.SessaoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,5 +12,5 @@ public interface IngressoRepository extends JpaRepository<IngressoEntity, Intege
 
     List<IngressoEntity> findAllByNome(String nome);
 
-    List<IngressoEntity> findAllByFilmeContains(String filme);
+    List<IngressoEntity> findAllBySessaoContains(SessaoEntity sessao);
 }

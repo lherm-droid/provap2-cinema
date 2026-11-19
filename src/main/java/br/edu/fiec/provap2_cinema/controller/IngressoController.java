@@ -2,6 +2,7 @@ package br.edu.fiec.provap2_cinema.controller;
 
 import br.edu.fiec.provap2_cinema.model.dto.IngressoDTO;
 import br.edu.fiec.provap2_cinema.model.entity.IngressoEntity;
+import br.edu.fiec.provap2_cinema.model.entity.SessaoEntity;
 import br.edu.fiec.provap2_cinema.service.IngressoService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -44,8 +45,8 @@ public class IngressoController {
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value="/filme", produces = APPLICATION_JSON_VALUE)
-    public List<IngressoEntity> findIngressoByFilme(@RequestParam String filme) {
-        return ingressoService.getAllByFilme(filme);
+    public List<IngressoEntity> findIngressoBySessao(@RequestParam SessaoEntity sessao) {
+        return ingressoService.getAllBySessao(sessao);
     }
 
     @ResponseStatus(HttpStatus.OK)

@@ -21,18 +21,15 @@ public class IngressoEntity {
     private String nome;
 
     @Column(nullable = false)
-    private String filme;
+    private Integer sessaoId;
 
     @Column(nullable = false)
     private Double preco;
 
-    @Column(nullable = false)
-    private String hora;
 
     public IngressoEntity(IngressoDTO ingressoDTO) {
         setNome(ingressoDTO.getNome());
-        setFilme(ingressoDTO.getFilme());
+        setSessaoId(ingressoDTO.getSessaoId());
         setPreco(ingressoDTO.getPreco());
-        setHora(ingressoDTO.getHora());
     }
 }
